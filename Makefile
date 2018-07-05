@@ -7,10 +7,10 @@ ARCH64_arm64 = arm64
 
 FLAGS = demo.go
 
+all: build
+
 demo:
 	go run ${FLAGS}
-
-all: build
 
 build: clean linux windows darwin freebsd solaris
 
