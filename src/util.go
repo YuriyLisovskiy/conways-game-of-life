@@ -1,4 +1,4 @@
-package main
+package src
 
 import (
 	"os"
@@ -17,10 +17,10 @@ func CLS() {
 	default:
 		panic(fmt.Sprintf("can't clear the screen on %s", runtime.GOOS))
 	}
-	runCmd(command)
+	RunCmd(command)
 }
 
-func runCmd(cmd string) {
+func RunCmd(cmd string) {
 	c := exec.Command(cmd)
 	c.Stdout = os.Stdout
 	c.Run()
@@ -35,7 +35,7 @@ func printSymbols(length int, symbol string, newLine bool) {
 	}
 }
 
-func printTitle(width, height, generation int) {
+func PrintTitle(width, height, generation int) {
 	printSymbols(width, "  ", true)
 	printSymbols((width-21/2)/2, "  ", false)
 	print(" Conway's Game of Life ")
